@@ -1,3 +1,4 @@
+import './style.css';
 document.addEventListener('DOMContentLoaded', () => {
     const questionDiv : HTMLElement= document.getElementById('questions') as HTMLElement;
     const answerContainer : HTMLElement = document.getElementById('answers') as HTMLElement;
