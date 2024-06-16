@@ -20,8 +20,11 @@ body{
 }
 
 .container{
-  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
+  width: 90vw;
   margin: auto;
 }
 
@@ -32,17 +35,16 @@ body{
 .progress-container{
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   height: 10vh;
   width: 100%;
-  margin: 10vmin 0;
 }
 
 .progress-container #progress,
 .progress-container .score{
   height: 100%;
-  width: 30vw;
+  width: 40%;
   display: flex;
   align-items: center;
   text-align: center;

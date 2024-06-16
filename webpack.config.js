@@ -1,33 +1,3 @@
-// const path = require("path");
-
-// module.exports = {
-//   mode: "development",
-//   entry: "./src/index.ts",
-//   module: {
-//     rules: [
-//       {
-//         test: /\.ts$/,
-//         use: "ts-loader",
-//         exclude: /node_modules/,
-//       },
-//     ],
-//   },
-//   resolve: {
-//     extensions: [".ts", ".js"],
-//   },
-//   output: {
-//     filename: "bundle.js",
-//     path: path.resolve(__dirname, "dist"),
-//   },
-//   devServer: {
-//     static: {
-//       directory: path.join(__dirname, "dist"),
-//     },
-//     compress: true,
-//     port: 9000,
-//   },
-// };
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -58,11 +28,18 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './dist/index.html', // مسار ملف HTML المصدر في dist
+      template: './src/index.html', // مسار ملف HTML المصدر
       filename: 'index.html', // نسخ الملف إلى dist مع بقية الملفات
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.css', // اسم ملف CSS المنتج
+      filename: 'styles.css', // اسم ملف CSS المنتج
     }),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
+    port: 9000,
+  },
 };
