@@ -14,6 +14,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        include: path.resolve(__dirname, 'src'),
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
@@ -31,7 +32,7 @@ module.exports = {
       filename: 'index.html', // نسخ الملف إلى dist مع بقية الملفات
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.css', // اسم ملف CSS المنتج
+      filename: 'styles.css', // اسم ملف CSS المنتج
     }),
   ],
   devServer: {
