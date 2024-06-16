@@ -27,11 +27,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // مسار ملف HTML المصدر
+      template: './index.html', // مسار ملف HTML المصدر
       filename: 'index.html', // نسخ الملف إلى dist مع بقية الملفات
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.css', // اسم ملف CSS المنتج
+      filename: 'style.css', // اسم ملف CSS المنتج
     }),
   ],
   devServer: {
