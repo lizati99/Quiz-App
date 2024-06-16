@@ -1,0 +1,211 @@
+:root{
+  --color-bg:#e8eaf6;
+  --color-secondary:#7986CB;
+  --color-text:#e8eaf6;
+  --color-secondary-bg:#EEE;
+  --color-success:#a5d6a7;
+  --color-wrong:#ef5350;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color-bg);
+}
+
+.container{
+  width: 90vw;
+  height: 100%;
+  margin: auto;
+}
+
+.quiz-app-content{
+  display: block;
+}
+
+.progress-container{
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  margin: 10vmin 0;
+}
+
+.progress-container #progress,
+.progress-container .score{
+  height: 100%;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  border: 1px solid var(--color-secondary);
+  overflow: hidden;
+}
+
+/* Start score style*/
+
+.score #score-title,
+.score #current-score,
+.score #total-score{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+  font-size: 3vmin;
+}
+.score #current-score,
+.score #total-score{
+  opacity: 1;
+  transition: opacity .5s linear, background-color .5s linear;
+}
+
+.hidden{
+  opacity: 0 !important;
+}
+
+/* /End score style*/
+
+/* Start progress style*/
+#progress #current-question,
+#progress #total-questions,
+#progress #progress-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: calc(100% / 3);
+  background-color: var(--color-secondary);
+  font-size: 2vmin;
+}
+
+#progress #progress-bar{
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+
+#progress-bar span{
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  top:0;
+  left: 0;
+  height: 100%;
+  background-color: var(--color-bg);
+  transition: width .5s linear;
+}
+/* /End progress style*/
+
+/* Start question style*/
+
+#questions{
+  font-size: 4vmin;
+  width: 100%;
+  font-weight: bolder;
+  margin: 5vmin;
+  margin-left: 10vw;
+}
+
+/* End question style*/
+
+/* Start Answer style*/
+
+#answers{
+  font-size: 3vmin;
+  width: 100%;
+}
+
+#answers .answer{
+  display: flex;
+  height: 7vh;
+  background-color: var(--color-secondary-bg);
+  margin:1vmin 0;
+}
+
+.answer:hover .answerValue{
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  cursor: pointer;
+  padding-left: 6vmin;
+  transition: background-color .5s linear;
+}
+
+.answer .key{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 10%;
+  background-color: var(--color-secondary);
+}
+
+.answer .answerValue{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  padding-left: 4vmin;
+}
+
+/* /End Answer style*/
+
+/* Start buttons style*/
+
+#buttons{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 5vh;
+  width: 100%;
+  margin: 3vh 0;
+}
+
+#buttons #next,
+#buttons #previous,
+#buttons #submit
+{
+  height: 100%;
+  width: 10vw;
+  border: none;
+  margin: 0 1vw;
+  font-size: 2vmin;
+  cursor: pointer;
+}
+
+#buttons #next:hover,
+#buttons #previous:hover,
+#buttons #submit:hover{
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  transition: background-color .5s linear;
+}
+/* /End buttons style*/
+.wrong{
+  background-color: var(--color-wrong) !important;
+}
+
+.success{
+  background-color: var(--color-success) !important;
+}
+.hide{
+  display: none;
+}
+
+.disabled{
+  cursor: not-allowed!important;
+  pointer-events: none!important;
+}
+
