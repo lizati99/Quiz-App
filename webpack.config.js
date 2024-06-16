@@ -30,7 +30,10 @@ module.exports = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new HtmlWebpackPlugin({ template: './index.html' }),
+    new HtmlWebpackPlugin({
+      template: './index.html', // مسار ملف HTML المصدر
+      filename: 'index.html', // نسخ الملف إلى dist مع بقية الملفات
+    }),
   ],
   optimization: {
     minimize: true, // تفعيل الضغط
