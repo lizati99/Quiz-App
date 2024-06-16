@@ -30,7 +30,7 @@ module.exports = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({ template: './index.html' }),
   ],
   optimization: {
     minimize: true, // تفعيل الضغط
